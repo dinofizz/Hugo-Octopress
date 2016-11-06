@@ -1309,19 +1309,19 @@ pre .highlighttable pre {
 figure.code .highlighttable *::-moz-selection {
     background: #386774;
     color: inherit;
-    text-shadow: #002b36 0 1px;
+    text-shadow: #272822 0 1px;
 }
 .gist .highlighttable *::-webkit-selection,
 figure.code .highlighttable *::-webkit-selection {
     background: #386774;
     color: inherit;
-    text-shadow: #002b36 0 1px
+    text-shadow: #272822 0 1px
 }
 .gist .highlighttable *::selection,
 figure.code .highlighttable *::selection {
     background: #386774;
     color: inherit;
-    text-shadow: #002b36 0 1px
+    text-shadow: #272822 0 1px
 }
 html .gist .gist-file {
     margin-bottom: 1.8em;
@@ -1337,7 +1337,7 @@ html .gist .gist-file .gist-syntax {
     background: none !important
 }
 html .gist .gist-file .gist-syntax .gist-highlighttable {
-    background: #002b36 !important
+    background: #272822 !important
 }
 html .gist .gist-file .gist-syntax .highlighttable pre {
     padding: 0
@@ -1373,7 +1373,7 @@ html .gist .gist-file .gist-meta a[href*=raw] {
     top: .4em
 }
 pre {
-    background: #002b36 top left;
+    background: top left;
     -webkit-border-radius: 0.0em;
     -moz-border-radius: 0.0em;
     -ms-border-radius: 0.0em;
@@ -1723,7 +1723,7 @@ html .gist .gist-file .gist-syntax .highlighttable pre div .gi .x,
 .highlighttable,
 .gist-highlighttable {
     margin-bottom: 1.8em;
-    background: #002b36;
+    background: #272822;
     overflow-y: hidden;
     overflow-x: auto
 }
@@ -2184,7 +2184,7 @@ a.label:visited {
 /* this part makes the mycode shortcode work */
 
 .linenodiv {
-    background-color: #002B36!important;
+    background-color: #272822!important;
 }
 
 /* because we have changed the font-family of everything, we need to change it for the code inside pre to fit with line numbers */
@@ -2205,7 +2205,7 @@ having a scrollbar for the cell will break alignment with line numbers
 div.codewrapper {
     overflow-x: auto;
     overflow-y: hidden;
-    background-color: #002B36;
+    background-color: #272822;
 }
 
 /* overflow for backtick code block
@@ -2213,7 +2213,7 @@ div.codewrapper {
    This ">" syntax is something new that I learned.
    basically it will select only div.highlights that are direct childs of entry-content */
 div.entry-content > div.highlight {
-    border-color: #002B36;
+    border-color: #272822;
     overflow-x: auto;
     overflow-y: hidden;
     margin-bottom: 0.4em;
