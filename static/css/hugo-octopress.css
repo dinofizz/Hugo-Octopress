@@ -423,6 +423,9 @@ article blockquote cite:before {
     float: left;
     margin: .5em 1.5em 1em 0
 }
+article figure a {
+    white-space: normal
+}
 .force-wrap,
 article a,
 aside.sidebar a {
