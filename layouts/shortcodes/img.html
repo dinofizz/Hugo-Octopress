@@ -1,12 +1,17 @@
 <!-- image -->
 <figure {{ with .Get "class" }}class="{{.}}" {{ end }}>
-    {{ $imgname := .Get "src" }}
-    {{ $original := .Page.Resources.GetMatch $imgname }}
-    {{ $image := $original.Resize "800x" }}
-    <a href="{{ $original.RelPermalink }}">
+    {{ $imgName := .Get "src" }}
+    {{ if isset .Params "thumbnailWidth"}}
+        {{ .Scratch.Set "thumbnailWidth" (.Get "thumbnailWidth") }}}
+    {{ else }}
+        {{ .Scratch.Set "thumbnailWidth" "800x"}}
+    {{ end }}
+    {{ $originalImage := .Page.Resources.GetMatch $imgName }}
+    {{ $resizedImage := $originalImage.Resize (.Scratch.Get "thumbnailWidth") }}
+    <a href="{{ $originalImage.RelPermalink }}">
         <span class="caption-wrapper">
-            <img class="caption" style="max-width: 100%; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
-            {{ if isset .Params "title" }}
+            <img class="caption" style="max-width: 100%; height: auto;" src="{{ $resizedImage.RelPermalink }}" width="{{ $resizedImage.Width }}" height="{{ $resizedImage.Height }}" alt="{{ .Get "title"}}">et "title"}}">le"}}">
+            {{ if eq (.Get "setCaption") "1" }}
             <span class="caption-text">{{ .Get "title" }}</span>
             {{ end }}
         </span>
