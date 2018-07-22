@@ -1,0 +1,15 @@
+<!-- image -->
+<figure {{ with .Get "class" }}class="{{.}}" {{ end }}>
+    {{ $imgname := .Get "src" }}
+    {{ $original := .Page.Resources.GetMatch $imgname }}
+    {{ $image := $original.Resize "800x" }}
+    <a href="{{ $original.RelPermalink }}">
+        <span class="caption-wrapper">
+            <img class="caption" style="max-width: 100%; height: auto;" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+            {{ if isset .Params "title" }}
+            <span class="caption-text">{{ .Get "title" }}</span>
+            {{ end }}
+        </span>
+    </a>
+</figure>
+<!-- image -->
