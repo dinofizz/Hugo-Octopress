@@ -10,7 +10,7 @@
     {{ $resizedImage := $originalImage.Resize (.Scratch.Get "thumbnailWidth") }}
     <a href="{{ $originalImage.RelPermalink }}">
         <span class="caption-wrapper">
-            <img class="caption" style="max-width: 100%; height: auto;" src="{{ $resizedImage.RelPermalink }}" width="{{ $resizedImage.Width }}" height="{{ $resizedImage.Height }}" alt="{{ .Get "title"}}">et "title"}}">le"}}">
+            <img class="caption" style="max-width: 100%; height: auto;" src="{{ $resizedImage.RelPermalink }}" width="{{ $resizedImage.Width }}" height="{{ $resizedImage.Height }}" alt="{{ .Get "title"}}">
             {{ if eq (.Get "setCaption") "1" }}
             <span class="caption-text">{{ .Get "title" }}</span>
             {{ end }}
