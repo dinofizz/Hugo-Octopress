@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
   {{ if not .Site.Params.disableGoogleFonts }}
-    <!-- If local Google Fonts are enabled -->
+    <!-- if local Google fonts are enabled -->
     {{ if not .Site.Params.remoteFonts }}
       <link href="/css/fonts.css" rel="stylesheet" type="text/css">
     {{ else }}
@@ -42,17 +42,13 @@
   <link href="{{ "/favicon.png" | absURL }}" rel="icon">
 
   <!-- RSS -->
-  {{ $siteTitle := .Site.Title }}
-  {{ $authorName := .Site.Author.name }}
-
-  {{ with .RSSLink }}<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $siteTitle }}" />{{ end }}
+  {{ with .RSSLink }}<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />{{ end }}
 
   <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
   <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
-
   <meta name="author" content="{{ .Site.Params.author }}">
 
-  <!-- outputs the generator version for usage tacking -->
+  <!-- Generator version for usage tacking -->
   {{ .Hugo.Generator }}
 
   <!-- Google Analytics -->
@@ -62,12 +58,11 @@
   {{ with .Site.Params.twitterCardEnabled }}
     {{ partial "custom_twitter_card.html" $ }}
   {{ end }}
-
 </head>
-<body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
+<body>
 
 <!-- top header for octopress -->
-<header role="banner">{{ partial "octo-header.html" . }}</header>
+<header role="banner">{{ partial "octo_header.html" . }}</header>
 
 <!-- navigation -->
 <nav role="navigation">{{ partial "navigation.html" . }}</nav>

@@ -13,25 +13,21 @@ disqusShortname = "Your disqus shortname"
 paginate = 6
 
 # Code highlighting options
+# Hugo uses Chroma but names are the same as the old pygments highlighter
 
 # Highlight shortcode and code fences (```) will be treated similarly
 pygmentscodefences = true
 
-# Use CSS for highlighting
-pygmentsuseclasses = true
+# Change highlight style here.
+# For a full list see: https://xyproto.github.io/splash/docs/all.html
+pygmentsStyle = "solarized-dark"
 
-# pygments options can be added here (and in the highlight shortcode in the markdown file)
-# Hugo supports these pygments options: style, encoding, noclasses, hl_lines, linenos
+# Other Chroma options can be added here (and in the highlight shortcode in the markdown file)
+# See list of supported options: https://gohugo.io/content-management/syntax-highlighting/#options
 # for example: pygmentsoptions = "linenos=true"
 
 [permalinks]
 post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the old ones
-
-# Make tags and categories work
-# As of Hugo v0.33 these are not needed anymore
-# [indexes]
-#   tag = "tags"
-#   category = "categories"
 
 [params]
 
@@ -87,8 +83,9 @@ post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the 
   # Search engine URL
   searchEngineURL = "https://www.google.com/search"
 
-  # Text of the "Continue Reading" label. &rarr; == right arrow, but it gets messed up in the string so it was added to index.html manually
-  continueReadingText = "Would you like to know more?"
+  # Text of the "Continue Reading" label. Supports markdown and inline HTML.
+  # For example, &rarr; == right arrow.
+  continueReadingText = "Would you like to know more? &rarr;"
 
   # Google analytics code - remove if you do not have/want Google Analytics - needs JavaScript
   # googleAnalytics = "UA-XXXXX-X"
@@ -147,6 +144,9 @@ post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the 
   # twitterCardDomain = "parsiya.net"
   # Don't include the @.
   # twitterCardAuthor = "CryptoGangsta"
+
+  # Set to true to enable compact index. Set to false or remove to go back to classic view.
+  # compactIndex = true
 
 # Menu
 # If navigationNewWindow (under [params]) is set to true then all links except root ("/") will open in a new window
