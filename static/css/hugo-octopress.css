@@ -1305,7 +1305,8 @@ li pre code {
     font-size: 1em !important;
     background: none;
     border: none;
-    color: #93a1a1;
+    color: #f8f8f2;
+    background-color: #272822
 }
 
 /* Fix codecaption and the new Chroma highlighter */
@@ -1926,7 +1927,7 @@ figure a {
     color: #666;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     white-space: nowrap;
 }
 
