@@ -2,7 +2,7 @@
 <figure {{ with .Get "class" }}class="{{.}}" {{ end }}>
     {{ $imgName := .Get "src" }}
     {{ if isset .Params "thumbnailWidth"}}
-        {{ .Scratch.Set "thumbnailWidth" (.Get "thumbnailWidth") }}}
+        {{ .Scratch.Set "thumbnailWidth" (.Get "thumbnailWidth") }}
     {{ else }}
         {{ .Scratch.Set "thumbnailWidth" "800x"}}
     {{ end }}
