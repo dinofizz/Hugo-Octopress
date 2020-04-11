@@ -4,7 +4,7 @@
     {{ if isset .Params "thumbnailWidth"}}
         {{ .Scratch.Set "thumbnailWidth" (.Get "thumbnailWidth") }}
     {{ else }}
-        {{ .Scratch.Set "thumbnailWidth" "800x"}}
+        {{ .Scratch.Set "thumbnailWidth" "1200x"}}
     {{ end }}
     {{ $originalImage := .Page.Resources.GetMatch $imgName }}
     {{ $resizedImage := $originalImage.Resize (.Scratch.Get "thumbnailWidth") }}

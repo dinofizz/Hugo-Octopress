@@ -83,4 +83,14 @@
       </section>
     {{ end }}
   {{ end }}
+
+  <section class="even">
+    <ul id="categories">
+    <h1>Categories</h1>
+      {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+        <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+      {{end}}
+    </ul>
+  </section>
+
 </aside>
